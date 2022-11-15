@@ -1,4 +1,4 @@
-package com.taiso.admin_notice.action;
+package com.taiso.notice.action;
 
 public class NoticeForward {
 	// 컨트롤러에서 페이지 이동할때 필요한

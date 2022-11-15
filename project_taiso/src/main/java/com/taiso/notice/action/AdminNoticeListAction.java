@@ -1,4 +1,4 @@
-package com.taiso.admin_member.action;
+package com.taiso.notice.action;
 
 import java.util.ArrayList;
 
@@ -6,21 +6,22 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.taiso.admin_member.db.AdminMemberDAO;
+import com.taiso.notice.db.noticeDAO;
 
 
-public class AdminMemberListAction implements Member {
+public class AdminNoticeListAction implements Notice {
 
 	@Override
-	public MemberForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		System.out.println(" M : AdminMemberListAction_execute 호출");
+	public NoticeForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		System.out.println(" M : AdminNoticeListAction_execute() 호출 ");
+		
 		
 		// DAO 객체 생성
-		AdminMemberDAO dao = new AdminMemberDAO();
+		noticeDAO dao = new noticeDAO();
 
 		// 게시판 전체 글 개수 확인
-		int cnt = dao.getMemberCount();
+		int cnt = dao.getNoticeCount();
 
 		System.out.println(" M : 전체 글 개수 : " + cnt + "개");
 
@@ -84,12 +85,11 @@ public class AdminMemberListAction implements Member {
 		request.setAttribute("endPage", endPage);
 		
 		// 페이지 이동
-		MemberForward forward = new MemberForward();
-		forward.setPath("./admin_member/adminMemberList.jsp");
+		NoticeForward forward = new NoticeForward();
+		forward.setPath("./notice/adminNoticeList.jsp");
 		forward.setRedirect(false);
-		
-		return forward;
 
+		return forward;
 	}
 
 }

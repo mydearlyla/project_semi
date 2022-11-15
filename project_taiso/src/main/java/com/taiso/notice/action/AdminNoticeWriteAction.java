@@ -1,12 +1,13 @@
-package com.taiso.admin_notice.action;
+package com.taiso.notice.action;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.taiso.admin_notice.db.BoardDTO;
-import com.taiso.admin_notice.db.noticeDAO;
+import com.taiso.notice.db.BoardDTO;
+import com.taiso.notice.db.noticeDAO;
 
 public class AdminNoticeWriteAction implements Notice {
 

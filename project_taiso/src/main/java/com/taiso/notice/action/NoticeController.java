@@ -1,4 +1,4 @@
-package com.taiso.admin_notice.action;
+package com.taiso.notice.action;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("*.nb")
-public class AdminNoticeController extends HttpServlet{
+public class NoticeController extends HttpServlet{
    
 	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +41,7 @@ public class AdminNoticeController extends HttpServlet{
 			System.out.println(" C : /AdminNoticeWrite.nb 호출");
 			
 			forward = new NoticeForward();
-			forward.setPath("./admin_notice/adminNoticeWrite.jsp");
+			forward.setPath("./notice/adminNoticeWrite.jsp");
 			forward.setRedirect(false);
 		}
 		else if(command.equals("/AdminNoticeWriteAction.nb")) {
@@ -108,16 +108,37 @@ public class AdminNoticeController extends HttpServlet{
 			System.out.println(" C : /AdminNoticeDelete.mb 호출 ");
 			
 			forward = new NoticeForward();
-			forward.setPath("./admin_notice/adminNoticeDelete.jsp");
+			forward.setPath("./notice/adminNoticeDelete.jsp");
 			forward.setRedirect(false);		
 		}
 		else if(command.equals("/AdminMain.nb")) {
 			System.out.println(" C : /AdminMain.nb 호출 ");
 			
 			forward = new NoticeForward();
-			forward.setPath("./admin_notice/adminMain.jsp");
+			forward.setPath("./notice/adminMain.jsp");
 			forward.setRedirect(false);		
 		}
+		else if(command.equals("/NoticeList.nb")) {
+			System.out.println(" C : /NoticeList.nb 호출");
+			
+			action = new NoticeListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/NoticeDetail.nb")) {
+			System.out.println(" C : /NoticeList.nb 호출");
+			
+			action = new NoticeDetailAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 		
 		

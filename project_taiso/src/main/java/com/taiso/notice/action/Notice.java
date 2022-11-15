@@ -1,4 +1,4 @@
-package com.taiso.admin_notice.action;
+package com.taiso.notice.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

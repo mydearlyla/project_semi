@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>noticeList</title>
+    <title>공지사항</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -68,7 +68,9 @@
               <c:forEach var="boDTO" items="${noticeListAll }">
                 <div>
                     <div class="num">${boDTO.bo_num }</div>
-                    <div class="title">${boDTO.bo_title }</div>
+                    <div class="title">
+                    	<a href="./NoticeDetail.nb?bo_num=${boDTO.bo_num }&pageNum=${pageNum}">${boDTO.bo_title }</a>
+                    </div>
                     <div class="date">${boDTO.bo_sysdate }</div>
                     <div class="count">${boDTO.bo_readcount }</div>
                 </div>
@@ -78,17 +80,17 @@
         </div>
     </div>
     
-	<!-- 페이지처리 -->
-	<div class="n_page">
-		<c:if test="${totalCnt != 0}">
-			<!-- 페이지번호 -->
-			<c:forEach var="i" begin="${startPage }" end="${endPage }" step="1">
-				<a href="./AdminNoticeList.nb?pageNum=${i }"
-					class="btn btn-outline-primary">${i }</a>
-			</c:forEach>
-		</c:if>
-	</div>
-
+	 		<!-- 페이지처리 -->
+            <div class="n_page"> 
+	  		 <c:if test="${totalCnt != 0}">
+                <!-- 페이지번호 -->
+                <c:forEach var="i" begin="${startPage }" end="${endPage }" step="1">
+		         	 <a href="./NoticeList.nb?pageNum=${i }" class="btn btn-outline-primary" >${i }</a> 
+		    	</c:forEach>  
+			 </c:if>
+		   </div>	
+		   
+		   
 
 		<!-- 메인 -->
      

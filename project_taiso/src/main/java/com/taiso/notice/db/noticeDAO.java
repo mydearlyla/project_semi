@@ -1,4 +1,4 @@
-package com.taiso.admin_notice.db;
+package com.taiso.notice.db;
 
 import java.sql.Connection;
 
@@ -27,7 +27,7 @@ public class noticeDAO {
 		Context initCTX = new InitialContext();
 		// 디비연동정보 불러오기 (context.xml 파일정보)
 		DataSource ds 
-		      = (DataSource)initCTX.lookup("java:comp/env/jdbc/TAISO");
+		      = (DataSource)initCTX.lookup("java:comp/env/jdbc/project_taiso");
 		// 디비정보(연결)  불러오기
 		con = ds.getConnection();
 		
@@ -234,7 +234,7 @@ public class noticeDAO {
 				con =  getConnection();
 				
 				// 3. sql작성 & pstmt 객체 생성
-				sql = "select * from member_board where bo_num=?";
+				sql = "select * from member_board where bo_num=? order by bo_num DESC";
 				pstmt = con.prepareStatement(sql);
 				
 				//???

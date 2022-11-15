@@ -5,7 +5,7 @@
 <%
 // // 	response.sendRedirect("./ReviewWrite.re");
 // 	response.sendRedirect("./QuestionWrite.bo");
-	response.sendRedirect("./MemberJoin.me");
+	response.sendRedirect("./MemberLogin.me");
 
 
 %>

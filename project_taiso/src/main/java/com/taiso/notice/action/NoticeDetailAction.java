@@ -1,38 +1,39 @@
-package com.taiso.admin_notice.action;
+package com.taiso.notice.action;
 
 import javax.servlet.http.HttpServletRequest;
 
 import javax.servlet.http.HttpServletResponse;
+import com.taiso.notice.db.BoardDTO;
+import com.taiso.notice.db.noticeDAO;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.taiso.admin_notice.db.BoardDTO;
-import com.taiso.admin_notice.db.noticeDAO;
-
-public class AdminNoticeUpdateAction implements Notice {
+public class NoticeDetailAction implements Notice {
 
 	@Override
 	public NoticeForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		System.out.println(" M : AdminNoticeUpdateAction_execute() 호출 ");
+		System.out.println(" M : NoticeDetailAction_execute() 호출");
 		
-		// 전달정보 저장
+		// 전달정보(파라메터) 저장
 		int bo_num = Integer.parseInt(request.getParameter("bo_num"));
 		String pageNum = request.getParameter("pageNum");
 		
-		// BoardDAO 객체생성
+				
 		noticeDAO dao = new noticeDAO();
+		// 글 조회수 1증가 -> DAO 1증가 메서드 호출
+		dao.updateReadcount(bo_num);
 		
-		// 수정된 글번호
+		System.out.println(" M : 조회수 1증가 완료! ");
+		
+		// 글 가져오기
 		BoardDTO boDTO = dao.getNoticeDetail(bo_num);
 		
-		// request 영역에 저장
+		// request 영역에 글정보를 저장
 		request.setAttribute("boDTO", boDTO);
 		request.setAttribute("pageNum", pageNum);
 		
-		// 페이지 이동
+		// 페이지 이동(준비)
 		NoticeForward forward = new NoticeForward();
-		forward.setPath("./admin_notice/adminNoticeUpdate.jsp");
+		forward.setPath("./notice/noticeDetail.jsp");
 		forward.setRedirect(false);
 		
 		return forward;

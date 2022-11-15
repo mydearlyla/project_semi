@@ -4,7 +4,7 @@
 <html lang="en">
 <!-- 헤더들어가는곳 -->
   <head>
-    <title>adminMain</title>
+    <title>Carbook - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -81,7 +81,7 @@
                 <li class="buttonitem" id="profile">
                     <a href="#profile" class="menubtn"><i class="fa fa-cog"></i> 회원관리</a>
                     <div class="smenu">
-                        <a href="#">회원조회</a>
+                        <a href="./AdminMemberList.mb">회원조회</a>
                         <a href="#">채팅상담</a>
                     </div>
                 </li>

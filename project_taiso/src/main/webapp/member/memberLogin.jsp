@@ -102,10 +102,10 @@
 						<div class="mx-3 my-2 py-2 bordert">
 							<div class="text-center py-3">
 								<a href="https://wwww.facebook.com" target="_blank" class="px-2">
-									<img src="https://www.dpreview.com/files/p/articles/4698742202/facebook.jpeg" alt="">
+									<img src="https://www.dpreview.com/files/p/articles/4698742202/facebook.jpeg" alt="" class="imglogin">
 								</a> 
 								<a href="https://www.google.com" target="_blank" class="px-2">
-									<img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" alt="">
+									<img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" alt="" class="imglogin">
 								</a> 
 							</div>
 						</div>
@@ -193,12 +193,15 @@ input[type='text'], input[type='password'] {
 	box-shadow: none
 }
 
-img {
+.imglogin {
 	width: 40px;
 	height: 40px;
 	object-fit: cover;
 	border-radius: 50%;
 	position: relative
+}
+
+	
 }
 
 a[target='_blank'] {

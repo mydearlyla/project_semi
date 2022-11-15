@@ -49,32 +49,32 @@
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    ${bodto.bo_title }
+                    ${boDTO.bo_title }
                 </div>
                 <div class="info">
                     <dl>
                         <dt>번호</dt>
-                        <dd>${bodto.bo_num }</dd>
+                        <dd>${boDTO.bo_num }</dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd>${bodto.bo_sysdate }</dd>
+                        <dd>${boDTO.bo_sysdate }</dd>
                     </dl>
                     <dl>
                         <dt>조회</dt>
-                        <dd>${bodto.bo_readcount }</dd>
+                        <dd>${boDTO.bo_readcount }</dd>
                     </dl>
                 </div>
                 <div class="cont">
-					${bodto.bo_content }
+					${boDTO.bo_content }
                 </div>
                 <div class="file">
-					${bodto.bo_file }
+					${boDTO.bo_file }
                 </div>
                 
             </div>
             <div class="bt_wrap">
-                <a href="notice.jsp" >목록</a>
+                <a href="./notice/noticeList.jsp" >목록</a>
             </div>
         </div>
     </div>

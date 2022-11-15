@@ -1,4 +1,4 @@
-package com.taiso.admin_notice.db;
+package com.taiso.notice.db;
 
 import java.sql.Date;
 
