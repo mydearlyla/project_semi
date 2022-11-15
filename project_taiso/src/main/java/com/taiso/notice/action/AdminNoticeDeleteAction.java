@@ -1,13 +1,11 @@
-package com.taiso.admin_notice.action;
+package com.taiso.notice.action;
 
 import java.io.PrintWriter;
-
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.taiso.admin_notice.db.BoardDTO;
-import com.taiso.admin_notice.db.noticeDAO;
+import com.taiso.notice.db.noticeDAO;
 
 public class AdminNoticeDeleteAction implements Notice {
 
